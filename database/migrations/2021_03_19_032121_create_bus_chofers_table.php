@@ -14,7 +14,11 @@ class CreateBusChofersTable extends Migration
     public function up()
     {
         Schema::create('bus_chofers', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
+            $table->integer('id_bus')->unsigned();
+            $table->foreign('id_bus')->references('id')->on('buses');
+            $table->integer('id_chofer')->unsigned();
+            $table->foreign('id_chofer')->references('id')->on('chofers');
             $table->timestamps();
         });
     }

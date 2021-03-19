@@ -14,7 +14,13 @@ class CreateReclamosTable extends Migration
     public function up()
     {
         Schema::create('reclamos', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
+            $table->string('descipcion',100);
+            $table->string('motivo',50);
+            $table->integer('id_bus')->unsigned();
+            $table->foreign('id_bus')->references('id')->on('buses');
+            $table->integer('id_chofer')->unsigned();
+            $table->foreign('id_chofer')->references('id')->on('chofers');
             $table->timestamps();
         });
     }

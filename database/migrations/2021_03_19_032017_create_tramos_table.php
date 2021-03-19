@@ -14,7 +14,11 @@ class CreateTramosTable extends Migration
     public function up()
     {
         Schema::create('tramos', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
+            $table->string('nombre',50);
+            $table->string('descripcion',50);
+            $table->integer('id_ruta')->unsigned();
+            $table->foreign('id_ruta')->references('id')->on('rutas');
             $table->timestamps();
         });
     }

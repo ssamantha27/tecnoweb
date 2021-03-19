@@ -14,7 +14,11 @@ class CreateChofersTable extends Migration
     public function up()
     {
         Schema::create('chofers', function (Blueprint $table) {
-            $table->id();
+            $table->integer('id')->unsigned();
+            $table->primary('id');
+            $table->time('hora_entrada');
+            $table->time('hora_salida');
+            $table->foreign('id')->references('id')->on('users');
             $table->timestamps();
         });
     }
