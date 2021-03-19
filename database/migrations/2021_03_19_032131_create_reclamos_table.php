@@ -19,8 +19,8 @@ class CreateReclamosTable extends Migration
             $table->string('motivo',50);
             $table->integer('id_bus')->unsigned();
             $table->foreign('id_bus')->references('id')->on('buses');
-            $table->integer('id_chofer')->unsigned();
-            $table->foreign('id_chofer')->references('id')->on('chofers');
+            $table->integer('id_cliente')->unsigned();
+            $table->foreign('id_cliente')->references('id')->on('clientes');
             $table->timestamps();
         });
     }
