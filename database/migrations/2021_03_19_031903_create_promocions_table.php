@@ -18,6 +18,8 @@ class CreatePromocionsTable extends Migration
             $table->string('nombre',50);
             $table->string('descripcion',50);
             $table->double('descuento',8,2);
+            $table->integer('id_tarifa')->unsigned();
+            $table->foreign('id_tarifa')->references('id')->on('tarifas');
             $table->timestamps();
         });
     }

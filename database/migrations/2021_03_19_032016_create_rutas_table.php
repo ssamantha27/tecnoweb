@@ -20,7 +20,7 @@ class CreateRutasTable extends Migration
             $table->string('lat_ini',50);
             $table->string('long_ini',50);
             $table->string('lat_fin',50);
-            $table->string('log_fin',50);
+            $table->string('long_fin',50);
             $table->timestamps();
         });
     }
