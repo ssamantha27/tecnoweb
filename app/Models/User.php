@@ -30,7 +30,7 @@ class User extends Authenticatable
         'direccion',
         'telefono',
         'fecha_nac',
-        'id:rol'
+        'id_rol'
     ];
 
     protected $rememberTokenName = false;

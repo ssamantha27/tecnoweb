@@ -31,7 +31,7 @@ class ruta extends Model
         'lat_ini',
         'long_ini',
         'lat_fin',
-        'long-fin'
+        'long_fin'
     ];
 
     /**
