@@ -23,7 +23,7 @@ class User extends Authenticatable
     protected $fillable = [
         'nombre',
         'apellido',
-        'correo',
+        'email',
         'ci',
         'password',
         'genero',
@@ -53,6 +53,11 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public static function findByEmail($email)
+    {
+        return static::where('email',compact('email'))->first();
+    }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
